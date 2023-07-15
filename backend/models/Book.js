@@ -1,7 +1,5 @@
 import mongoose from "mongoose";
 
-
-
 const bookSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -21,8 +19,11 @@ const bookSchema = new mongoose.Schema({
   },
   available: {
     type: Boolean,
-    
+  },
+  image: {
+    type: String,
+    required: true,
   },
 });
 
-export const Book= mongoose.model("book", bookSchema);
+export const Book = mongoose.model("book", bookSchema);
