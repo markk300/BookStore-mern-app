@@ -1,0 +1,37 @@
+/* BookForm.css */
+.book-form {
+    max-width: 80%;
+    margin: 0 auto;
+    font-size: 22px;
+    
+    padding: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    height: 30px;
+    border-radius: 5px;
+    border-color: lightgray;
+  }
+  
+  
+  button {
+    margin-top: 10px;
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 600px) {
+    .book-form {
+      max-width: 80%;
+      
+    }
+  }
+  

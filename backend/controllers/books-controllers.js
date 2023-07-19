@@ -2,7 +2,7 @@ import { Book } from "../models/Book.js";
 
 export const getAllBooks = async (req, res) => {
   try {
-    const books = await Book.find();
+    const books = await Book.find({});
 
     if (books.length === 0) {
       return res.status(404).json({ message: "No Books" });
@@ -41,7 +41,7 @@ export const addBook = async (req, res) => {
 
 export const updateBook = async (req, res) => {
   const id = req.params.id;
-  const { title, author, description, price, available, image } = req.body;
+  const { title, author, description, price, image } = req.body;
   let book;
   try {
     book = await Book.findByIdAndUpdate(id, {
@@ -49,7 +49,6 @@ export const updateBook = async (req, res) => {
       author,
       description,
       price,
-      available,
       image,
     });
     book = await book.save();

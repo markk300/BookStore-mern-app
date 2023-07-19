@@ -1,0 +1,87 @@
+
+.book {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+    
+  }
+  
+  
+  .content {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 270px;
+    border-radius: 15px;
+    background-color: lightgrey;
+    
+  }
+  
+  .image{
+    text-align: center;
+  }
+ 
+  .image img {
+    width: 240px;
+    height: 300px;
+    height: auto;
+    border-radius: 10px;
+
+  }
+  
+ 
+  .texts {
+    margin-top: 10px;
+    overflow: hidden;
+    padding-top: 5px;
+  }
+  
+ 
+  .texts h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .texts p {
+    font-size: 16px;
+    color: #555;
+    overflow: hidden;
+  }
+  .price{
+    text-align: end;
+    font-weight: bold;
+  }
+
+  .buttons{
+    display: flex;
+    flex-direction: column;
+    
+}
+.buttons button{
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    border: 0;
+}
+.buttons button:hover{
+  box-shadow: 5px 5px #888888;
+}
+.buttons button:active{
+  box-shadow: 5px 5px #0c0a0a;
+}
+.buttons .update{
+    background-color: coral;
+    color: white;
+    
+}
+.buttons .delete{
+    background-color:#f44336;
+    color: white;
+
+}
+.buttons .details{
+    text-align: end;
+    margin-top: 20px;
+    color: black;
+}
+  
