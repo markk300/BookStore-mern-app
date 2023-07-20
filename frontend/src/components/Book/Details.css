@@ -1,0 +1,96 @@
+.book-details {
+    
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+  }
+  
+  .book-container {
+    background-color: lightgrey;
+    padding: 20px;
+    border-radius: 15px;
+  }
+  
+  .book-content {
+    display: flex;
+    
+  }
+  
+  .book-img {
+    
+  }
+  .book-img img{
+    width: 300px;
+    height: 450;
+    border-radius: 15px;
+  }
+  
+  .book-img img {
+    
+  }
+  
+  .book-text {
+    width: 80%;
+    padding: 30px;
+  }
+  
+  .book-text h2 {
+    font-size: 35px;
+  }
+  .book-author{
+    font-size: 18px!important;
+    color: #555;
+    margin-top: 5px;
+    margin-bottom: 50px;
+  }
+  
+  .book-text p {
+   
+    font-size: 26px;
+    overflow-wrap: break-word;
+    inline-size: 80%;
+    
+  }
+  .book-price{
+    width: 10%!important;
+    font-size: 30px!important;
+    border: 1px solid #555;
+    margin-top: 180px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  @media (max-width: 768px) {
+    .book-details{
+        text-align: center;
+    }
+    .book-content{
+        display: inline;
+        justify-content: center;
+    }
+    .book-text{
+        width: 100%!important;
+        padding: 0!important;
+        margin-top: 30px;
+    }
+    .book-text p{
+        width: 100%;
+        inline-size: none!important;
+    }
+    .book-price{
+        width: 100%!important;
+        margin-left: 0!important;
+        margin-top: 50px;
+        
+    }
+
+  }
+
+  
+  
