@@ -1,7 +1,20 @@
 import React from "react";
 import "./BookSection.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+
 function BookSection({ data }) {
+  const navigation = useNavigate();
+
+  const deleteHandler = async (item) => {
+    try {
+      await axios.delete(`http://localhost:3001/books/${item._id}`);
+      window.location.reload();
+    } catch (error) {
+      console.error("Error deleting book:", error);
+    }
+  };
+
   return (
     <div className="book">
       {data &&
@@ -16,8 +29,12 @@ function BookSection({ data }) {
               <p className="price">${item.price}</p>
             </div>
             <div className="buttons">
-              <button className="update">Update</button>
-              <button className="delete">Delete</button>
+              <Link to={`update/${item._id}`} className="update">
+                Update
+              </Link>
+              <button onClick={() => deleteHandler(item)} className="delete">
+                Delete
+              </button>
               <Link to={`/${item._id}`} className="details">
                 DETAILS &#8594;
               </Link>

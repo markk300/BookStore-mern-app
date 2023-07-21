@@ -1,40 +1,44 @@
-import React, { useState } from "react";
-import "./AddBook.css";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom';
 
-
-function AddBook() {
-  const navigate=useNavigate();
-  const [inputs, setInputs] = useState({
-    title: "",
-    author: "",
-    description: "",
-    price: 0,
-    image: ""
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+function Update() {
+    const [inputs, setInputs] = useState("")
+    const { updateid } = useParams();
+    const navigate=useNavigate()
+    
+    useEffect(()=>{
+        const fetchHandler=async ()=>{
+            await axios.get(`http://localhost:3001/books/${updateid}`)
+            .then((res)=>res.data)
+            .then((data)=>setInputs(data.book))
+        }
+        fetchHandler()
+    },[updateid])
+    
+    const sendRequest=async()=>{
+        await axios.put(`http://localhost:3001/books/${updateid}`,{
+        title: String(inputs.title),
+        author: String(inputs.author),
+        description: String(inputs.description),
+        price: Number(inputs.price),
+        image: String(inputs.image),
+        }).then((res)=>res.data)
+    }
+    
+    const handleChange=(e)=>{
+        const { name, value } = e.target;
     setInputs({ ...inputs, [name]: value });
-  };
-
-  const handleSubmit=async(e)=>{
-     e.preventDefault()
-     try{
-     await axios.post("http://localhost:3001/books",inputs)
-     alert("Book Added")
-     navigate("/")
-     }catch(err){
-      console.log(err)
-     }
-     console.log(inputs)
-  }
-
+    }
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        sendRequest();
+        navigate("/")
+    }
   return (
     <div>
       <h2>Add Book</h2>
-      <form className="book-form" onSubmit={handleSubmit}>
+     {inputs && (<form className="book-form" onSubmit={handleSubmit}>
         <label htmlFor="title">Title:</label>
         <input
           type="text"
@@ -85,9 +89,9 @@ function AddBook() {
         />
 
         <button type="submit">Submit</button>
-      </form>
+      </form>)}
     </div>
-  );
+  )
 }
 
-export default AddBook;
+export default Update

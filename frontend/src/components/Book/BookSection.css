@@ -50,15 +50,17 @@
   .price{
     text-align: end;
     font-weight: bold;
+    margin-bottom: 20px;
   }
 
   .buttons{
     display: flex;
     flex-direction: column;
+    padding: 15px;
     
 }
 .buttons button{
-    padding: 5px;
+    
     border-radius: 5px;
     font-size: 15px;
     border: 0;
@@ -69,14 +71,28 @@
 .buttons button:active{
   box-shadow: 5px 5px #0c0a0a;
 }
+.buttons .update:hover{
+  box-shadow: 5px 5px #888888;
+}
+.buttons .update:active{
+  box-shadow: 5px 5px #0c0a0a;
+}
 .buttons .update{
     background-color: coral;
     color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    border: 0;
+    text-align: center;
+    text-decoration: none;
     
 }
 .buttons .delete{
     background-color:#f44336;
     color: white;
+    cursor: pointer;
+    padding: 10px;
 
 }
 .buttons .details{

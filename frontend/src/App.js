@@ -5,6 +5,7 @@ import Header from "./components/Header.js";
 import About from "./components/About.js"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Details from "./components/Book/Details";
+import Update from "./components/Update";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Books />} />
           <Route path="add-book" element={<AddBook />} />
           <Route path="/:id" element={<Details />} />
+          <Route path="update/:updateid" exact element={<Update />} />
           <Route path="about" element={<About />} />
         </Routes>
       </Router>
