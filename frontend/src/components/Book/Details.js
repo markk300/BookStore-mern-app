@@ -1,11 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import "./Details.css"
+import { useNavigate, useParams } from "react-router-dom";
+import "./Details.css";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 function Details() {
   const [book, setBook] = useState(null);
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchHandler = async () => {
@@ -14,6 +16,7 @@ function Details() {
         setBook(response.data.book);
       } catch (error) {
         console.error("Error fetching book details:", error);
+        alert("Failed to load the book. Please try again later.");
       }
     };
 
@@ -27,7 +30,7 @@ function Details() {
         <div className="book-container">
           <div className="book-content">
             <div className="book-img">
-              <img src={book.image} />
+              <img src={book.image} alt="Book cover" />
             </div>
             <div className="book-text">
               <h2 className="title">{book.title}</h2>
@@ -37,9 +40,14 @@ function Details() {
               <p className="book-price">${book.price}</p>
             </div>
           </div>
+          <button className="back-btn" onClick={() => navigate(-1)}>
+            <ArrowBackIosIcon />
+            BACK
+          </button>{" "}
+          &nbsp;
         </div>
       ) : (
-        <p>Loading...</p>
+        <div className="loader"></div>
       )}
     </div>
   );

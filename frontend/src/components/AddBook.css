@@ -1,37 +1,88 @@
-/* BookForm.css */
+.add-book-container {
+  margin-top: 50px;
+}
+.add-book-container h2 {
+  text-align: center;
+  font-style: italic;
+  font-size: 40px;
+}
 .book-form {
-    max-width: 50%;
-    margin: 0 auto;
-    font-size: 22px;
-    
-    padding: 20px;
+  max-width: 60%;
+  margin: 0 auto;
+  font-size: 15px;
+  margin-top: 50px;
+  padding: 20px;
+  border: none;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  color: #555;
+  font-size: large;
+}
+input:placeholder-shown {
+  font-size: 15px;
+}
+input,
+textarea:placeholder-shown {
+  font-size: 15px;
+  align-items: center;
+}
+
+input,
+textarea {
+  width: 100%;
+
+  border: 1 solid #444;
+  font-size: 15px;
+  padding: 8px;
+  margin-top: 5px;
+  height: 50px;
+}
+
+.add-book {
+  position: relative;
+  background: none;
+
+  margin-top: 30px;
+  border: solid 1px #121212;
+  transition: linear 250ms;
+  width: 20%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.add-book:is(:hover, :focus) {
+  color: #fff;
+}
+
+.add-book::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  z-index: -1;
+  background-color: #121212;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: linear 250ms;
+}
+
+.add-book:is(:hover, :focus)::after {
+  transform: scale(1);
+}
+
+@media screen and (max-width: 600px) {
+  .book-form {
+    max-width: 80%;
   }
-  
-  label {
-    display: block;
-    margin-top: 10px;
+  .add-book-container {
+    text-align: center;
   }
-  
-  input,
-  textarea {
+  .add-book {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    height: 30px;
-    border-radius: 5px;
-    border-color: lightgray;
   }
-  
-  
-  button {
-    margin-top: 10px;
-  }
-  
-  /* Responsive styles */
-  @media screen and (max-width: 600px) {
-    .book-form {
-      max-width: 80%;
-      
-    }
-  }
-  
+}

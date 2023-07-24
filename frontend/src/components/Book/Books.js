@@ -1,25 +1,49 @@
 import React, { useEffect, useState } from "react";
-import "./Books.css"
+import "./Books.css";
 import axios from "axios";
 import BookSection from "./BookSection";
-
 
 const URL = "http://localhost:3001/books";
 
 function Books() {
   const [books, setBooks] = useState();
+  const [searchInput, setSearchInput] = useState("");
+
   useEffect(() => {
     const fetch = async (req, res) => {
-      return await axios.get(URL).then((res) =>setBooks(res.data.books));
+      try {
+        return await axios.get(URL).then((res) => setBooks(res.data.books));
+      } catch (err) {
+        console.error(err);
+      }
     };
-    fetch()
+    fetch();
   }, []);
-  
+
   return (
     <div className="books">
-      <h1>Books</h1>
+      <div className="title-input">
+        <h1>Books</h1>
+        <input
+          type="text"
+          placeholder="Search by title or author"
+          onChange={(event) => {
+            setSearchInput(event.target.value);
+          }}
+        />
+      </div>
       <div className="card">
-        {books ? <div>(<BookSection data={books} />) </div>:<div>Loading...</div>}
+        {books ? (
+          <BookSection
+            data={books.filter(
+              (val) =>
+                val.title.toLowerCase().includes(searchInput.toLowerCase()) ||
+                val.author.toLowerCase().includes(searchInput.toLowerCase())
+            )}
+          />
+        ) : (
+          <div className="loader"></div>
+        )}
       </div>
     </div>
   );

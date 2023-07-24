@@ -1,103 +1,99 @@
-
 .book {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-    grid-gap: 20px;
-    padding: 20px;
-    
-  }
-  
-  
-  .content {
-    border: 1px solid #ccc;
-    padding: 10px;
-    width: 270px;
-    border-radius: 15px;
-    background-color: lightgrey;
-    
-  }
-  
-  .image{
-    text-align: center;
-  }
- 
-  .image img {
-    width: 240px;
-    height: 300px;
-    height: auto;
-    border-radius: 10px;
-
-  }
-  
- 
-  .texts {
-    margin-top: 10px;
-    overflow: hidden;
-    padding-top: 5px;
-  }
-  
- 
-  .texts h2 {
-    font-size: 20px;
-    margin-bottom: 5px;
-  }
-  
-  .texts p {
-    font-size: 16px;
-    color: #555;
-    overflow: hidden;
-  }
-  .price{
-    text-align: end;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-
-  .buttons{
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-    
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 25px;
+  padding: 20px;
+  justify-content: center;
+  justify-items: center;
 }
-.buttons button{
-    
-    border-radius: 5px;
-    font-size: 15px;
-    border: 0;
+
+.content {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 300px;
+  border-radius: 15px;
+  background-color: lightgrey;
 }
-.buttons button:hover{
+
+.image {
+  text-align: center;
+}
+
+.image img {
+  width: 240px;
+  height: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.texts {
+  margin-top: 10px;
+  overflow: hidden;
+  padding-top: 5px;
+}
+
+.texts h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.texts p {
+  font-size: 16px;
+  color: #555;
+  overflow: hidden;
+}
+.price {
+  text-align: end;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+.buttons button {
+  border-radius: 5px;
+  font-size: 15px;
+  border: 0;
+}
+.buttons button:hover {
   box-shadow: 5px 5px #888888;
 }
-.buttons button:active{
+.buttons button:active {
   box-shadow: 5px 5px #0c0a0a;
 }
-.buttons .update:hover{
+.buttons .update:hover {
   box-shadow: 5px 5px #888888;
 }
-.buttons .update:active{
+.buttons .update:active {
   box-shadow: 5px 5px #0c0a0a;
 }
-.buttons .update{
-    background-color: coral;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 15px;
-    border: 0;
-    text-align: center;
-    text-decoration: none;
-    
+.buttons .update {
+  background-color: coral;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  border: 0;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 5px;
 }
-.buttons .delete{
-    background-color:#f44336;
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-
+.buttons .delete {
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
 }
-.buttons .details{
-    text-align: end;
-    margin-top: 20px;
-    color: black;
+.buttons .details {
+  text-align: end;
+  margin-top: 20px;
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
 }
-  

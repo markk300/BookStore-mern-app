@@ -1,17 +1,17 @@
 import React from "react";
 import "./BookSection.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
 function BookSection({ data }) {
-  const navigation = useNavigate();
-
   const deleteHandler = async (item) => {
     try {
       await axios.delete(`http://localhost:3001/books/${item._id}`);
       window.location.reload();
     } catch (error) {
       console.error("Error deleting book:", error);
+      alert("Failed to delete the book. Please try again later.");
     }
   };
 
@@ -36,7 +36,7 @@ function BookSection({ data }) {
                 Delete
               </button>
               <Link to={`/${item._id}`} className="details">
-                DETAILS &#8594;
+                DETAILS <NavigateNextIcon />
               </Link>
             </div>
           </div>
