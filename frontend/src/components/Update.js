@@ -24,7 +24,7 @@ function Update() {
 
   const sendRequest = async () => {
     await axios
-      .put(`http://localhost:3001/books/${updateid}`, {
+      .put(`http://localhost:3001/books/${updateid}` && `https://book-mern-app.onrender.com/books/${updateid}`, {
         title: String(inputs.title),
         author: String(inputs.author),
         description: String(inputs.description),
