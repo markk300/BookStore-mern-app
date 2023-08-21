@@ -7,7 +7,7 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 function BookSection({ data }) {
   const deleteHandler = async (item) => {
     try {
-      await axios.delete(`http://localhost:3001/books/${item._id}`);
+      await axios.delete(`http://localhost:3001/books/${item._id}` && `https://book-mern-app.onrender.com/books/${item._id}`);
       window.location.reload();
     } catch (error) {
       console.error("Error deleting book:", error);
