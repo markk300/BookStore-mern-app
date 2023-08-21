@@ -12,7 +12,7 @@ function Details() {
   useEffect(() => {
     const fetchHandler = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/books/${id}`);
+        const response = await axios.get(`http://localhost:3001/books/${id}` && `https://book-mern-app.onrender.com/books/${id}`);
         setBook(response.data.book);
       } catch (error) {
         console.error("Error fetching book details:", error);

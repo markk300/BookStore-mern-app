@@ -21,7 +21,7 @@ function AddBook() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3001/books", inputs);
+      await axios.post("http://localhost:3001/books" && `https://book-mern-app.onrender.com/books`, inputs);
       alert("Book Added");
       navigate("/");
     } catch (err) {

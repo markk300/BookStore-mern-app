@@ -11,7 +11,7 @@ function Update() {
     const fetchHandler = async () => {
       try {
         await axios
-          .get(`http://localhost:3001/books/${updateid}`)
+          .get(`http://localhost:3001/books/${updateid}` && `https://book-mern-app.onrender.com/books/${updateid}`)
           .then((res) => res.data)
           .then((data) => setInputs(data.book));
       } catch (err) {
